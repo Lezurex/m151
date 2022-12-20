@@ -21,5 +21,13 @@ services:
     environment:
       - PMA_USER=root
       - PMA_PASSWORD=root
+  
+  php:
+    build: ./php
+    ports:
+      - 8080:80
+    volumes:
+      - ./src:/var/www/html:rw
+
 volumes:
   db:
